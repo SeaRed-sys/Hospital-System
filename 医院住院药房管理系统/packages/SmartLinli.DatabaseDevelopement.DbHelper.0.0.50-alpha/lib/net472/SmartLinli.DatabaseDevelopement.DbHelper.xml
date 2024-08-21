@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartLinli.DatabaseDevelopement.DbHelper</name>
+    </assembly>
+    <members>
+        <member name="T:SmartLinli.DatabaseDevelopement.DataReaderHelper">
+            <summary>
+            数据读取器助手；
+            </summary>
+        </member>
+        <member name="F:SmartLinli.DatabaseDevelopement.DataReaderHelper._DataReader">
+            <summary>
+            数据读取器；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataReaderHelper.Read">
+            <summary>
+            数据读取器读取并前进至下一记录；
+            </summary>
+            <returns>是否读取得记录</returns>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DataReaderHelper.Item(System.Int32)">
+            <summary>
+            获取位于指定索引的列的值；
+            </summary>
+            <param name="index">索引</param>
+            <returns>值</returns>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DataReaderHelper.Item(System.String)">
+            <summary>
+            获取位于指定名称的列的值；
+            </summary>
+            <param name="name">名称</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataReaderHelper.Close">
+            <summary>
+            关闭；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataReaderHelper.#ctor(System.Data.IDataReader)">
+            <summary>
+            构造函数；
+            </summary>
+            <param name="dataReader">数据读取器</param>
+        </member>
+        <member name="T:SmartLinli.DatabaseDevelopement.IDataReaderHelper">
+            <summary>
+            数据读取器助手接口；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.IDataReaderHelper.Read">
+            <summary>
+            数据读取器读取并前进至下一记录；
+            </summary>
+            <returns>是否读取得记录</returns>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.IDataReaderHelper.Item(System.Int32)">
+            <summary>
+            获取位于指定索引的列的值；
+            </summary>
+            <param name="index">索引</param>
+            <returns>对象</returns>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.IDataReaderHelper.Item(System.String)">
+            <summary>
+            获取位于指定名称的列的值；
+            </summary>
+            <param name="name">名称</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.IDataReaderHelper.Close">
+            <summary>
+            关闭；
+            </summary>
+        </member>
+        <member name="T:SmartLinli.DatabaseDevelopement.DbHelperBase">
+            <summary>
+            数据库助手（基类）；
+            </summary>
+        </member>
+        <member name="F:SmartLinli.DatabaseDevelopement.DbHelperBase._DbCommand">
+            <summary>
+            数据库命令；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.DbCommand">
+            <summary>
+            数据库命令；
+            </summary>
+        </member>
+        <member name="F:SmartLinli.DatabaseDevelopement.DbHelperBase._DbParameter">
+            <summary>
+            数据库参数；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.DbParameter">
+            <summary>
+            数据库参数；
+            </summary>
+        </member>
+        <member name="F:SmartLinli.DatabaseDevelopement.DbHelperBase._DbDataAdapter">
+            <summary>
+            数据适配器；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.DbDataAdapter">
+            <summary>
+            数据适配器；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.DbConnectionStringName">
+            <summary>
+            数据库连接字符串名称；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.GetDbConnection">
+            <summary>
+            获取数据库连接；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.GetDbParameter">
+            <summary>
+            获取数据库参数；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.GetDbDataAdapter">
+            <summary>
+            获取数据适配器；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.NewCommand">
+            <summary>
+            新建命令；
+            </summary>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.CommandText(System.String)">
+            <summary>
+            设置命令文本
+            </summary>
+            <param name="commandText">命令文本</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.IsStoredProcedure(System.Boolean)">
+            <summary>
+            设置命令是否存储过程；
+            </summary>
+            <param name="isStoredProcedure">是否存储过程</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.NewCommand(System.String)">
+            <summary>
+            新建命令；
+            </summary>
+            <param name="commandText">命令文本</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.NewParameter(System.String)">
+            <summary>
+            新建参数；
+            </summary>
+            <param name="parameterName">参数名称</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.SpecificParameterType(System.Object)">
+            <summary>
+            设置特定数据库参数类型；
+            </summary>
+            <param name="dbType"></param>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.WithParameter(System.String,System.Object,System.ValueType,System.Int32)">
+            <summary>
+            包含参数；
+            </summary>
+            <param name="parameterName">参数名称</param>
+            <param name="value">值</param>
+            <param name="dbType">数据类型</param>
+            <param name="size">长度</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.WithParameter(System.String,System.ValueType,System.Int32,System.String,System.Data.DataRowVersion)">
+            <summary>
+            包含参数；
+            </summary>
+            <param name="parameterName">参数名称</param>
+            <param name="dbType">数据类型</param>
+            <param name="size">长度</param>
+            <param name="sourceColumn">来源列</param>
+            <param name="dataRowVersion">数据行版本</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.WithParameters(System.String[])">
+            <summary>
+            包含参数；参数值源自数据表；
+            </summary>
+            <param name="parameterNames">参数名称</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ParameterType(System.Data.DbType)">
+            <summary>
+            设置通用数据库参数类型；
+            </summary>
+            <param name="dbType">通用数据库数据类型</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ParameterSize(System.Int32)">
+            <summary>
+            设置参数长度；
+            </summary>
+            <param name="size">长度</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ParameterValue(System.Object)">
+            <summary>
+            设置参数值；
+            </summary>
+            <param name="value">值</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ParameterDirection(System.Data.ParameterDirection)">
+            <summary>
+            设置L参数方向；
+            </summary>
+            <param name="parameterDirection">参数方向</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.AsInsertCommand">
+            <summary>
+            将新建的命令设为数据适配器的插入命令；
+            </summary>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.AsUpdateCommand">
+            <summary>
+            将新建的命令设为数据适配器的更新命令；
+            </summary>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.AsDeleteCommand">
+            <summary>
+            将新建的命令设为数据适配器的删除命令；
+            </summary>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.Return">
+            <summary>
+            执行命令，返回标量；
+            </summary>
+            <returns>标量值</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.Return``1">
+            <summary>
+            执行命令，返回标量；
+            若结果为空值，将返回其类型的默认值；
+            </summary>
+            <typeparam name="T">标量类型</typeparam>
+            <returns>标量值</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ReturnNullable``1">
+            <summary>
+            执行命令，返回可空标量；
+            若结果为空值，将返回可空类型的标量值；
+            </summary>
+            <typeparam name="T">标量类型</typeparam>
+            <returns>标量值</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.QuickReturn``1(System.String)">
+            <summary>
+            快速执行命令，返回标量；
+            若结果为空值，将返回其类型的默认值；
+            </summary>
+            <typeparam name="T">标量类型</typeparam>
+            <param name="commandText">命令文本</param>
+            <returns>标量值</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ReturnReader">
+            <summary>
+            执行命令，返回数据读取器；
+            完成读取后，请手动关闭数据读取器；
+            </summary>
+            <returns>数据读取器</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.QuickReturnReader(System.String)">
+            <summary>
+            快速执行命令，返回数据读取器助手；
+            完成读取后，请手动关闭数据读取器；
+            </summary>
+            <param name="commandText">命令文本</param>
+            <returns>数据读取器助手</returns>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.InitialRecordIndex">
+            <summary>
+            初始记录序号；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.CurrentRecordIndex">
+            <summary>
+            当前记录序号；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.MaxRecordIndex">
+            <summary>
+            最大记录序号；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.HasRecord">
+            <summary>
+            是否读得记录；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.Records">
+            <summary>
+            数据读取器读得的记录；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.DbHelperBase.Item(System.String)">
+            <summary>
+            获取指定名称的列的值；
+            </summary>
+            <param name="name">名称</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.QuickRead(System.String)">
+            <summary>
+            快速执行命令，并读取一行或多行记录；
+            随后判断数据库助手是否读得记录，再通过数据库助手的索引器访问该行记录的指定列；
+            </summary>
+            <param name="commandText">命令文本</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ReturnTable">
+            <summary>
+            执行SQL命令，返回数据表；
+            </summary>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ExecuteNonQuery(System.Func{System.Exception,System.Boolean})">
+            <summary>
+            执行SQL命令，写入数据；
+            </summary>
+            <param name="match">匹配特定异常</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.Submit">
+            <summary>
+            执行命令，提交数据；
+            </summary>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.QuickSubmit(System.String)">
+            <summary>
+            快速执行命令，提交数据；
+            </summary>
+            <param name="commandText">命令文本</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.Submit(System.Data.DataTable)">
+            <summary>
+            执行命令，提交数据；
+            </summary>
+            <param name="dataTable">数据表</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DbHelperBase.ConvertNullable``1(System.Object)">
+            <summary>
+            转换可空值；
+            </summary>
+            <typeparam name="T">结果类型</typeparam>
+            <param name="value">值</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:SmartLinli.DatabaseDevelopement.PgsqlHelper">
+            <summary>
+            PostgreSQL助手；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.PgsqlHelper.DbConnectionStringName">
+            <summary>
+            数据库连接字符串名称；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.PgsqlHelper.GetDbConnection">
+            <summary>
+            获取数据库连接；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.PgsqlHelper.GetDbParameter">
+            <summary>
+            获取数据库参数；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.PgsqlHelper.GetDbDataAdapter">
+            <summary>
+            获取数据适配器；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.PgsqlHelper.SpecificParameterType(System.Object)">
+            <summary>
+            设置参数的PostgreSQL助手数据类型；
+            </summary>
+            <param name="dbType">SQL Server数据类型</param>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.PgsqlHelper.Submit">
+            <summary>
+            执行命令，提交数据；
+            </summary>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="T:SmartLinli.DatabaseDevelopement.SqlHelper">
+            <summary>
+            SQL Server助手；
+            </summary>
+        </member>
+        <member name="P:SmartLinli.DatabaseDevelopement.SqlHelper.DbConnectionStringName">
+            <summary>
+            数据库连接字符串名称；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.SqlHelper.GetDbConnection">
+            <summary>
+            获取数据库连接；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.SqlHelper.GetDbParameter">
+            <summary>
+            获取数据库参数；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.SqlHelper.GetDbDataAdapter">
+            <summary>
+            获取数据适配器；
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.SqlHelper.SpecificParameterType(System.Object)">
+            <summary>
+            设置参数的SQL Server数据类型；
+            </summary>
+            <param name="dbType">SQL Server数据类型</param>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.SqlHelper.Submit">
+            <summary>
+            执行命令，提交数据；
+            </summary>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="T:SmartLinli.DatabaseDevelopement.NotUniqueException">
+            <summary>
+            违反唯一性异常；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.NotUniqueException.#ctor">
+            <summary>
+            构造函数；
+            </summary>
+        </member>
+        <member name="T:SmartLinli.DatabaseDevelopement.DataBindHelper">
+            <summary>
+            数据绑定助手；
+            </summary>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.QuickFill(SmartLinli.DatabaseDevelopement.DbHelperBase,System.String,System.Windows.Forms.ComboBox,System.String)">
+            <summary>
+            快速填充；
+            利用数据读取器，读取记录并添加至组合框控件的项集合；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="commandText">命令文本</param>
+            <param name="comboBox">组合框控件</param>
+            <param name="displayMember">显示值</param>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.QuickFill(SmartLinli.DatabaseDevelopement.DbHelperBase,System.String,System.Windows.Forms.ListControl,System.String,System.String)">
+            <summary>
+            快速填充；
+            读取数据表，并设为列表控件的数据源；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="commandText">命令文本</param>
+            <param name="listControl">列表控件</param>
+            <param name="displayMember">显示值</param>
+            <param name="valueMember">实际值</param>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.QuickFill(SmartLinli.DatabaseDevelopement.DbHelperBase,System.String,System.Windows.Forms.DataGridView)">
+            <summary>
+            快速填充；
+            读取数据表，并设为数据网格视图的数据源；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="commandText">命令文本</param>
+            <param name="dataGridView">数据网格视图</param>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.Submit(SmartLinli.DatabaseDevelopement.DbHelperBase,System.Windows.Forms.DataGridView)">
+            <summary>
+            执行命令，提交数据；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="dataGridView">数据网格视图</param>
+            <returns>受影响行数</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.GetDataColumnName(System.Windows.Forms.Control)">
+            <summary>
+            获取数据属性的名称；
+            </summary>
+            <param name="control">控件</param>
+            <returns>数据属性名称</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.DisplayOn(SmartLinli.DatabaseDevelopement.DbHelperBase,System.Windows.Forms.Control,System.String)">
+            <summary>
+            显示于控件；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="control">控件</param>
+            <param name="name">数据属性名称</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.DisplayOn(SmartLinli.DatabaseDevelopement.DbHelperBase,System.Windows.Forms.RadioButton,System.String,System.Boolean)">
+            <summary>
+            显示于单选按钮；
+            单选按钮标签可能需要设为相应的属性名称；若单选按钮的选中状态与数据相反，还可在属性名称前加!；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="radioButton">单选按钮</param>
+            <param name="name">数据属性名称</param>
+            <param name="isOpposite">单选按钮的选中状态是否与数据相反</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.DisplayOn(SmartLinli.DatabaseDevelopement.DbHelperBase,System.Windows.Forms.DateTimePicker,System.String)">
+            <summary>
+            显示于日期时间选择器；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="dateTimePicker">日期时间选择器</param>
+            <param name="name">数据属性名称</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.DisplayOn(SmartLinli.DatabaseDevelopement.DbHelperBase,System.Windows.Forms.ListControl,System.String)">
+            <summary>
+            显示于列表控件；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="listControl">列表控件</param>
+            <param name="name">数据属性名称</param>
+            <returns>数据库助手</returns>
+        </member>
+        <member name="M:SmartLinli.DatabaseDevelopement.DataBindHelper.DisplayOn(SmartLinli.DatabaseDevelopement.DbHelperBase,System.Windows.Forms.Control[])">
+            <summary>
+            显示于控件；
+            控件应满足以下要求之一：①控件名称包含相应的属性名称作为后缀，并以下划线分隔，例如txb_Name；②控件标签设为相应的属性名称，或根据具体控件要求添加额外信息；
+            </summary>
+            <param name="dbHelper">数据库助手</param>
+            <param name="controls">控件</param>
+            <returns>数据库助手</returns>
+        </member>
+    </members>
+</doc>
